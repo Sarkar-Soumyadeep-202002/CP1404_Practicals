@@ -1,6 +1,6 @@
 """
 Name: Soumyadeep Sarkar
-Description: Checks for the validity of a password and prints '*' according to the length of the password
+Description: Checks for the validity of a password and prints the same number of '*' as the length of the password
 """
 
 

@@ -4,16 +4,21 @@ Description: Checks for the validity of a password and prints '*' according to t
 """
 
 
-def is_valid(password, length):
-    return len(password) <= length  # Checks if the length of the password is within the given length
+def get_password():
+    password = input("Enter your password: ")
+    return password
+
+
+def print_asterisk(password):
+    for character in range(0, len(password)):
+        print('*', end='')
 
 
 def main():
-    password = input("Enter the password: ")
+    password = get_password()
     length = 10
-    print(f"Your password is Valid? {is_valid(password,length)}")
-    for character in range(0, len(password)):
-        print('*', end='')  # Prints the same number of asterisks as the length of the password
+    print(f"Your password is Valid? {len(password) >= length}")
+    print_asterisk(password)
 
 
 main()

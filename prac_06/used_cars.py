@@ -6,14 +6,14 @@ from prac_06.car import Car
 
 def main():
     """Demo test code to show how to use car class."""
-    my_car = Car(180)
+    name = input("Name: ")
+    my_car = Car(180, name)
     my_car.drive(30)
-    print("fuel =", my_car.fuel)
-    print("odo =", my_car.odometer)
     print(my_car)
-
-    print("Car {}, {}".format(my_car.fuel, my_car.odometer))
-    print("Car {self.fuel}, {self.odometer}".format(self=my_car))
+    limo = Car(100, name)
+    limo.add_fuel(20)
+    limo.drive(115)
+    print(limo)
 
 
 main()

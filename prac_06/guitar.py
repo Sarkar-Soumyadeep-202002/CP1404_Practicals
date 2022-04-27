@@ -1,0 +1,20 @@
+class Guitar:
+    """Provide information about guitars"""
+
+    def __init__(self, name, year, cost):
+        """Store the information about the guitar"""
+        self.name = name
+        self.year = year
+        self.cost = cost
+
+    def get_age(self):
+        """Find the age of the Guitar"""
+        return 2022 - self.year
+
+    def is_vintage(self):
+        """Find out if the guitar is a vintage one"""
+        return self.get_age() > 50
+
+    def __str__(self):
+        return "{} ({}) : ${}".format(self.name, self.year, self.cost)
+

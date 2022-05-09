@@ -20,13 +20,20 @@ class MilesToKmConverter(App):
 
     def handle_calculation(self):
         """Convert the input distance from miles to kilometer"""
-        distance_miles = float(self.root.ids.input_distance_miles.text)
+        distance_miles = self.get_valid_distance()
         self.root.ids.output_label.text = str(distance_miles * MILES_TO_KM)
 
     def handle_increment(self, increment_value):
         """Increment the distance according to the user's choice"""
-        distance_miles = float(self.root.ids.input_distance_miles.text) + increment_value
+        distance_miles = self.get_valid_distance() + increment_value
         self.root.ids.input_distance_miles.text = str(distance_miles)
+
+    def get_valid_distance(self):
+        """Check if the input is a valid distance"""
+        try:
+            return float(self.root.ids.input_distance_miles.text)
+        except ValueError:
+            return 0.0
 
 
 MilesToKmConverter().run()

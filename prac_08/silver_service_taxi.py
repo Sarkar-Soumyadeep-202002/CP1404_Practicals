@@ -16,6 +16,10 @@ class SilverServiceTaxi(Taxi):
         super().__init__(name, fuel)
         self.price_per_km = Taxi.price_per_km * fanciness
 
+    def start_fare(self):
+        """Begin a new fare."""
+        self.current_fare_distance = 0
+
     def calculate_fare(self, distance):
         """Calculate the fare of the trip"""
         super().drive(distance)
